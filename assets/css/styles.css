@@ -1,0 +1,638 @@
+/*
+ * Definición de variables CSS globales para el tema claro
+ * Estas variables controlan los colores principales, fondos, sombras y gradientes
+ * Se utilizan en todo el sitio para mantener una consistencia visual
+ */
+:root {
+    --primary-color: #1a237e;
+    --secondary-color: #283593;
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --card-background: #fff;
+    --border-color: #e0e0e0;
+    --highlight-background: #e8eaf6;
+    --nav-background: rgba(255, 255, 255, 0.95);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --header-gradient: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    --footer-gradient: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+}
+
+/*
+ * Configuración del tema oscuro
+ * Redefine las variables CSS para crear una paleta de colores oscura
+ * Se activa cuando se añade la clase .dark-mode al elemento body
+ */
+.dark-mode {
+    --primary-color: #4a90e2;
+    --secondary-color: #357abd;
+    --text-color: #e0e0e0;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --border-color: #2d2d2d;
+    --highlight-background: #1a1a1a;
+    --nav-background: rgba(18, 18, 18, 0.95);
+    --shadow-color: rgba(74, 144, 226, 0.2);
+    --header-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    --footer-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+}
+
+/* Estilos globales del cuerpo del documento */
+body {
+    /* Utiliza la fuente Roboto para todo el contenido */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Contenedor principal que limita el ancho del contenido */
+.container {
+    /* Ancho máximo para mantener la legibilidad */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--card-background);
+    box-shadow: 0 0 30px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*
+ * Barra de navegación principal
+ * Utiliza position: sticky para mantenerla visible al hacer scroll
+ * Incluye efectos de transición suave y sombra para profundidad
+ */
+.nav-menu {
+    position: sticky;
+    top: 0;
+    background-color: var(--nav-background);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    z-index: 1000;
+    padding: 10px 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-item {
+    margin: 0 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-item:hover {
+    color: var(--primary-color);
+}
+
+/*
+ * Encabezado principal de la página
+ * Contiene el título, subtítulo y foto de perfil
+ * Usa gradientes y efectos de hover para interactividad
+ */
+header {
+    text-align: center;
+    padding: 60px 0 30px;
+    background: var(--header-gradient);
+    color: white;
+    border-radius: 0 0 10px 10px;
+    transition: background 0.3s ease;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/*
+ * Secciones de contenido principal
+ * Cada sección tiene un fondo claro, bordes redondeados y sombra
+ * Se aplican transiciones suaves para cambios de tema
+ */
+section {
+    margin: 60px 0;
+    padding: 30px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    position: relative;
+    font-size: 28px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease;
+}
+
+.highlight-box {
+    background-color: var(--highlight-background);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px 0;
+    transition: background-color 0.3s ease;
+}
+
+.highlight-title {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+/*
+ * Sección de información de contacto
+ * Diseño flexible que se adapta a diferentes tamaños de pantalla
+ * Incluye efectos hover y transiciones para mejor interactividad
+ */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    background-color: var(--highlight-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--highlight-background);
+    padding: 10px 15px;
+    border-radius: 5px;
+    flex: 1 1 200px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+/*
+ * Elementos de experiencia laboral/profesional
+ * Muestra fechas, roles y empresas en un formato estructurado
+ * Incluye estilos para destacar fechas y roles importantes
+ */
+.experience-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color 0.3s ease;
+}
+
+.experience-date {
+    font-weight: bold;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.experience-role {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.experience-company {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/*
+ * Sección de habilidades técnicas
+ * Utiliza un diseño en grid flexible para mostrar habilidades
+ * Incluye iconos y efectos hover para mejor visualización
+ */
+.info-item {
+    margin-bottom: 30px;
+}
+
+.info-title {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.skill-item {
+    text-align: center;
+    background-color: var(--highlight-background);
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1 1 100px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/*
+ * Tarjetas de proyectos
+ * Muestra información de proyectos en un formato de tarjeta
+ * Incluye efectos de elevación y transición al hover
+ */
+.project-card {
+    background-color: var(--highlight-background);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    transition: transform 0.3s, background-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-title {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.project-tech {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+/*
+ * Estilos de botones generales
+ * Diseño consistente para todos los botones del sitio
+ * Incluye efectos hover y transiciones suaves
+ */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/*
+ * Pie de página del sitio
+ * Usa gradiente similar al encabezado para consistencia visual
+ * Incluye transiciones para cambios de tema
+ */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--footer-gradient);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    margin-top: 50px;
+    transition: background 0.3s ease;
+}
+
+/*
+ * Botón para cambiar entre tema claro y oscuro
+ * Incluye animación de rotación y efectos de brillo
+ * Mantiene estado en localStorage para persistencia
+ */
+#theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    background-color: var(--card-background);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    margin-left: 15px;
+}
+
+#theme-toggle:hover {
+    color: var(--primary-color);
+    transform: scale(1.1) rotate(360deg);
+    box-shadow: 0 0 15px var(--primary-color);
+    background-color: var(--highlight-background);
+}
+
+/*
+ * Ventanas modales para contenido adicional
+ * Incluye fondo semitransparente y efecto de desenfoque
+ * Animaciones suaves para apertura y cierre
+ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--card-background);
+    margin: 5% auto;
+    padding: 35px;
+    border-radius: 15px;
+    width: 70%;
+    max-width: 800px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    position: relative;
+    animation: modalopen 0.5s;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes modalFlash {
+    0% { opacity: 0; transform: scale(0.95); box-shadow: 0 0 0 rgba(74, 144, 226, 0); }
+    50% { opacity: 1; transform: scale(1.02); box-shadow: 0 0 60px rgba(74, 144, 226, 0.6); }
+    100% { opacity: 1; transform: scale(1); box-shadow: 0 0 30px rgba(74, 144, 226, 0.3); }
+}
+
+.close-modal {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--secondary-color);
+    transform: rotate(90deg);
+}
+
+.close {
+    color: var(--text-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/*
+ * Ajustes responsivos para pantallas pequeñas
+ * Modifica layouts y tamaños para mejor visualización móvil
+ * Ajusta espaciados y tamaños de elementos
+ */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-wrap: wrap;
+    }
+    
+    .nav-item {
+        margin: 5px;
+    }
+    
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+    }
+    
+    .project-card {
+        padding: 20px;
+    }
+    
+    .skills-container {
+        gap: 10px;
+    }
+    
+    .skill-item {
+        min-width: 100px;
+        padding: 10px 15px;
+    }
+}
+
+/*
+ * Animaciones personalizadas
+ * Define efectos de transición y animación reutilizables
+ * Incluye efectos de aparición suave y rotación
+ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+/*
+ * Estilos específicos para la página de CV grupal
+ * Diseño centrado con fotos circulares de los integrantes
+ * Incluye efectos hover y transiciones personalizadas
+ */
+.cv-grupal {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cv-grupal header {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 3rem 0;
+}
+
+.photo-circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 1rem;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 20px var(--shadow-color);
+}
+
+.photo-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--primary-color);
+}
+
+/* Script para cambiar entre modo claro y oscuro */
+/* Añadir al final del archivo JS:
+
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const icon = themeToggle.querySelector('i');
+    
+    // Verificar si hay una preferencia guardada
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+    
+    themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        
+        // Cambiar el icono
+        if (document.body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+});
+*/
